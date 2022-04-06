@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> 
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home</title>
+</head>
+
+<body id="body-pd">
+ 
+       
+ <!-- MENU -->
+<nav class="menu">
+  <ol>
+    <li class="menu-item"><a th:href="@{/livraria/home/}">Home</a></li>
+    <li class="menu-item">
+      <a href="#0">Livro</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroLivro/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarLivro/}">Listar</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Cliente</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroCliente/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarCliente/}">Listar</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Funcionario</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroFuncionario/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarFuncionario/}">Listar</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    
+    
+<!-- TEXTO HOME -->  
+	
+	<div class="banner">
+		
+		<div class="color">
+		
+		</div>
+		<div class="container">
+			<h1>Olá Seja Bem-Vindo!</h1>
+			<p>Sejam bem-vindos a livraria...</p>
+		</div>
+		</div>
+   
+
+  	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  	<script  src="/js/script.js"></script>
+    <script  src="/js/index.js"></script>
+    
+   
+    
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <title> Pagina Listagem</title>
+    <link rel="stylesheet" href="/css/styleListagem.css">
+
+     
+<body>
+  
+<!-- MENU -->
+<nav class="menu">
+  <ol>
+    <li class="menu-item"><a th:href="@{/livraria/home/}">Home</a></li>
+    <li class="menu-item">
+      <a href="#0">Livro</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroLivro/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarLivro/}">Listar</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Cliente</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroCliente/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarCliente/}">Listar</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Funcionario</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroFuncionario/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarFuncionario/}">Listar</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+  
+  
+  
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-sm-8 col-lg-6">
+			<!-- Section Heading-->
+			<div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s"
+				style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+				<h3>Listagem de Livros</h3>
+				<div class="line"></div>
+			</div>
+		</div>
+	</div>
+	<div  class="row">
+		<!-- Single Advisor-->
+		<div th:each="livro:${livros}" class="col-12 col-sm-6 col-lg-3">
+			<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s"
+				style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+				<!-- Team Thumb-->
+				<div class="advisor_thumb"><img width="150" height="200" th:src="@{'/images/'+${livro.titulo}+.png}"
+						alt="">
+					<!-- Social Info-->
+					<div class="social-info"><a href="#">
+					     
+					     <i class="fa fa-facebook"></i></a><a href="#">
+					     <i class="fa fa-twitter"></i></a><a href="#">
+					     <i class="fa fa-linkedin"></i></a>
+					     
+					     </div>
+					    
+					     
+				</div>
+				<!-- Team Details-->
+				
+				<div class="single_advisor_details_info">
+				
+					<h6 th:text="${livro.titulo}"></h6>
+					<p>Autor:</p>
+					<p th:text="${livro.autor}" class="designation"></p>
+					<a th:href="@{/livraria/excluirLivro/{codigo}(codigo = ${livro.codigo})}"
+						class="btn btn-danger"> Excluir </a></td>
+					<a th:href="@{/livraria/atualizarLivro/{codigo}(codigo = ${livro.codigo})}"
+						class="btn btn-primary"> Atualizar </a></td>
+					
+					<a th:href="@{/livraria/adicionarCarrinho/{codigo}(codigo = ${livro.codigo})}"
+						class="btn btn-outline-success"> Comprar </a></td>
+				</div>
+			</div>
+		</div>
+
+    
+    
+    <src="/js/bootstrap.min.js"/>
+
+</body>
+</html>

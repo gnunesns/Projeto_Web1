@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    
+    <title> Pagina Listagem</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styleListagem.css">
+
+     
+<body>
+
+<!-- MENU -->
+<nav class="menu">
+  <ol>
+    <li class="menu-item"><a th:href="@{/livraria/home/}">Home</a></li>
+    <li class="menu-item">
+      <a href="#0">Livro</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroLivro/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarLivro/}">Listar</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Cliente</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroCliente/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarCliente/}">Listar</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Funcionario</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a th:href="@{/livraria/cadastroFuncionario/}">Cadastrar</a></li>
+        <li class="menu-item"><a th:href="@{/livraria/listarFuncionario/}">Listar</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+  <!--  
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Salario</th>
+      <th scope="col">Data de Nascimento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "funcionario:${funcionarios}">
+      <td th:text = "${funcionario.codigo}"></td>
+      <td th:text = "${funcionario.nome}"></td>
+      <td th:text = "${funcionario.cpf}"></td>
+      <td th:text = "${funcionario.salario}"></td>
+      <td th:text = "${{funcionario.dataNascimento}}"></td>
+      <td> <a th:href="@{/livraria/excluirFuncionario/{codigo}(codigo = ${funcionario.codigo})}"  class="btn btn-danger"> Excluir </a></td>
+      <td> <a th:href="@{/livraria/atualizarFuncionario/{codigo}(codigo = ${funcionario.codigo})}"  class="btn btn-primary"> Atualizar </a></td>
+    </tr>
+    -->
+    
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-8 col-lg-6">
+            <!-- Section Heading-->
+            <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+              <h3>Listagem de Funcionarios</h3>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row" >
+          <!-- Single Advisor-->
+          <div th:each = "funcionario:${funcionarios}" class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+              <!-- Team Thumb-->
+              <div class="advisor_thumb"><img width="150" height="200" th:src="@{'/images/'+${funcionario.nome}+.png}" alt="">
+                <!-- Social Info-->
+                <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+              </div>
+              <!-- Team Details-->
+              <div class="single_advisor_details_info">
+                <h6 th:text = "${funcionario.nome}"></h6>
+                <p>Salario:</p>
+                <p  th:text = "${funcionario.salario}" class="designation"></p>
+                <a  th:href="@{/livraria/excluirFuncionario/{codigo}(codigo = ${funcionario.codigo})}"  class="btn btn-danger"> Excluir </a></td>
+                <a  th:href="@{/livraria/atualizarFuncionario/{codigo}(codigo = ${funcionario.codigo})}" class="btn btn-primary"> Atualizar </a></td>
+              </div>
+            </div>
+          </div>
+    
+  </tbody>
+</table>
+    
+    
+    <src="/js/bootstrap.min.js"/>
+
+</body>
+</html>
